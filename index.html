@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Walsh Legal Videography</title>
+</head>
+<style>
+    /* Set colors for different parts of the site*/
+    :root {
+        --purple: #582564;
+        --dark-purple: #261929;
+        --medium-teal: #3d7576;
+        --light-teal: #baeff0;
+        --gold: #fff5c4;
+        --garnet: #261214;
+        --light-garnet: #855a4b;
+
+        --header-color: var(--medium-teal);
+        --footer-background: var(--light-teal);
+        --footer-color: var(--purple);
+        --footer-links: var(--medium-teal);
+    }
+    /* Stop any weird browser shenanigans */
+    html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Lato', sans-serif;
+    }
+    html {
+        height: 100%;
+    }
+    body {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    hr {
+        border: 0.5px solid var(--garnet);
+        background-color: var(--garnet);
+        box-shadow: var(--garnet)gray 0px 0px 1px;
+    }
+    .center{
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+    /* Header */
+    .header-logo {
+        height: 130px;
+        width: 320px;
+        background-image: url("/static/logo_transparent-bg.png");
+        background-position: top left;
+        background-repeat: no-repeat;
+        margin: 0;
+    }
+    .header-logo > h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        display: inline-block;
+        position: relative;
+        top: 78px;
+        left: 124px;
+        margin: 0;
+        padding: 0;
+        color: var(--header-color);
+    }
+    /* Jumbotron */
+    .jumbotron-message {
+        color: white;
+        text-align: center;
+    }
+    .jumbotron-message>h2 {
+        font-size: 64px;
+        font-family: 'Libre Baskerville';
+        text-shadow: var(--garnet) 1px 1px 5px;
+        margin: 0;
+        padding: 0;
+    }
+    .jumbotron-message>p {
+        line-height: 42px;
+        font-size: 24px;
+        text-shadow: var(--garnet) 1px 1px 5px;
+    }
+
+    /* Content */
+    .cases {
+        flex-grow: 1;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+    }
+    .cases > section {
+        margin: 20px;
+        padding: 0px;
+    }
+
+    .cases h3 {
+        text-align: center;
+        color: var(--purple);
+        font-size: 24px;
+    }
+    .story-video {
+        max-width: 100%;
+    }
+    /* Footer */
+    footer {
+        min-height: 60px;
+        padding: 30px;
+        background-color: var(--footer-background);
+        color: var(--footer-color);
+    }
+    .footer-info {
+        display: flex;
+        margin-left: 60px;
+    }
+
+    .footer-info a {
+        text-decoration: none;
+        color: var(--footer-links);
+    }
+    .footer-info nav {
+        line-height: 2;
+        vertical-align: text-top;
+    }
+    /* Different Screen Size Layouts */
+    /* Desktop Specific */
+    @media only screen and (min-width: 577px) {
+        .jumbotron {
+            background-image: url("/static/courtroom_cropped.png");
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            padding: 20px;
+        }
+
+        .jumbotron-message {
+            max-width: 40%;
+            min-width: 300px;
+            margin: 0 auto 0 40px;
+        }
+        .footer-info>li {
+            margin-right: 120px;
+        }
+    }
+    /* Fix Text Overflow*/
+    @media only screen and (max-width: 1000px) {
+        .jumbotron-message {
+            max-width: 100%;
+            width: 100%;
+            margin: 0px;
+        }
+        .jumbotron {
+            background-size: cover;
+        }
+    }
+    /* Phone Specific */
+    @media only screen and (max-width: 576px) {
+        .header-logo {
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+            margin: auto;
+        }
+        .jumbotron {
+            background-image: url("courtroom_phone.png");
+            padding: 30px;
+        }
+        .jumbotron-message {
+            width: 100%;
+        }
+        .cases {
+            flex-direction: column;
+        }
+        .footer-info {
+            flex-direction: column;
+            margin: 0;
+        }
+    }
+
+</style>
+<body>
+    <header>
+        <div class="header-logo">
+            <h1>LEGAL VIDEO</h1>
+        </div>
+    </header>
+    <div class="jumbotron">
+        <div class="jumbotron-message">
+            <h2>Why Walsh?</h2>
+            <p>Return On Investment.<br/>Every one of our productions has garnered better settlements for our personal injury and wrongful death clients. We don't simply make videos. We produce broadcast-quality documentaries that are full of power and feeling.</p>
+        </div>
+    </div>
+    <article class="cases">
+        <section>
+            <h3>Kelsey's Story</h3>
+            <video class="story-video" controls>
+                <source src="/static/Rabbit_browsing.webm" type="video/webm">
+                Sorry, your browser does not support embedded videos
+            </video>
+        </section>
+        <section>
+            <h3>Mo's Story</h3>
+            <video class="story-video" controls>
+                <source src="/static/Rabbit_browsing.webm" type="video/webm">
+                Sorry, your browser does not support embedded videos
+            </video>
+        </section>
+    </article>
+    <footer>
+        <img width=150 src="static/original_transparent-bg.png" alt="Walsh Litigations Logo" /><br>
+        <ul class="footer-info">
+            <li>
+                <h4>Contact Us</h4>
+                Maureen Walsh <br />
+                    <address>
+                        Email: <a href="mailto:maureen@walshlegalvideo.com">maureen@walshlegalvideo.com</a><br />
+                        Phone: <a href="tel:+18502126805">(850) 212-6805</a><br />
+                        Location: Tallahassee, Florida
+                </address>
+            </li>
+            <li>
+                <h4>Links</h4>
+                <nav>
+                    <a href="#">Kelsey's Story</a><br/>
+                    <a href="#">Story 2</a>
+                </nav>
+            </li>
+            <li>
+                <h4>Social Media</h4>
+                <a href="https://www.linkedin.com/in/maureen-walsh-794760a/"><img width=40 src="linkedin.png" alt="Linkedin Badge" /></a>
+            </li>
+        </ul>
+        <br />
+        <span class="center">Walsh Litigation Services &#169;</span>
+    </footer>
+</body>
+</html>
