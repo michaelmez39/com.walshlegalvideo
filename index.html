@@ -6,22 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Josefin+Sans:ital,wght@0,200;0,400;1,200;1,300&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="shortcut icon" href="/favicon3.png" type="image/x-icon">
     <title>Walsh Legal Videography</title>
 </head>
 <style>
     /* Set colors for different parts of the site*/
     :root {
-        --purple: #582564;
-        --dark-purple: #261929;
+        --purple: #5e2e69;
+        --dark-purple: #341a3a;
         --medium-teal: #3d7576;
         --light-teal: #baeff0;
+        --dark-teal: #174E46;
         --gold: #fff5c4;
         --garnet: #261214;
         --light-garnet: #855a4b;
 
-        --header-color: var(--medium-teal);
+        --body-padding: 15px;
+
+        --jumbotron-background: var(--purple);
+        --header-color: var(--dark-teal);
         --footer-background: var(--light-teal);
         --footer-color: var(--purple);
         --footer-links: var(--medium-teal);
@@ -30,32 +35,71 @@
     html, body {
         margin: 0;
         padding: 0;
-        font-family: 'Lato', sans-serif;
     }
+    /* Element Styling */
     html {
         height: 100%;
     }
     body {
         min-height: 100%;
-        display: flex;
-        flex-direction: column;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+    article {
+        padding: var(--body-padding);
+    }
+    aside {
+        padding: var(--body-padding);
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Cinzel', serif;
+        font-weight: 600;
+        color: var(--header-color)
+    }
+    h3 {
+        font-size: 1.8em;
+    }
+    blockquote {
+        font-family: 'Josefin Sans';
+        font-weight: 300;
+        font-style: italic;
+    }
+    address {
+        display: inline-block;
+    }
+    figcaption {
+        text-align: left;
+        font-family: 'Cinzel';
+        border-left: 2px solid var(--medium-teal);
+        padding-left: 4px;
+        float: right;
     }
     ul {
         list-style: none;
         padding: 0px;
         margin: 0px;
+        font-size: 1.2em;
     }
-    hr {
-        border: 0.5px solid var(--garnet);
-        background-color: var(--garnet);
-        box-shadow: var(--garnet)gray 0px 0px 1px;
+    p {
+        font-family: 'Josefin Sans';
+        font-size: 1.6em;
     }
-    .center{
-        display: inline-block;
-        width: 100%;
+    
+    .center {
+        display: block;
+        margin: auto;
         text-align: center;
     }
     /* Header */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header > address {
+        font-size: 1.2em;
+        text-align: center;
+        padding: 30px;
+    }
     .header-logo {
         height: 130px;
         width: 320px;
@@ -81,52 +125,81 @@
         text-align: center;
     }
     .jumbotron-message>h2 {
-        font-size: 64px;
-        font-family: 'Libre Baskerville';
-        text-shadow: var(--garnet) 1px 1px 5px;
+        font-size: 80px;
+        font-weight: 400;
+        color: white;
         margin: 0;
         padding: 0;
     }
+    .jumbotron-message > h3 {
+        font-family: 'Josefin Sans', sans-serif;
+        color: white;
+        font-size: 42px;
+    }
     .jumbotron-message>p {
-        line-height: 42px;
+        line-height: 36px;
         font-size: 24px;
-        text-shadow: var(--garnet) 1px 1px 5px;
     }
 
-    /* Content */
-    .cases {
-        flex-grow: 1;
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        list-style: none;
-        padding: 0;
+    /* Asides */
+    aside li {
+        margin-left: 30px;
+        line-height: 2.0;
     }
-    .cases > section {
-        margin: 20px;
+    aside li::before {
+        content: "➣ ";
+    }
+    .testimonial {
         padding: 0px;
+        margin: 0px;
     }
-
-    .cases h3 {
-        text-align: center;
-        color: var(--purple);
-        font-size: 24px;
+    .testimonial figcaption {
+        text-align: left;
+        float: right;
     }
+    /* Content */
     .story-video {
+        display: inline-block;
+        border-radius: 5px;
+        width: 100%;
+    }
+    .story {
+        max-width: 800px;
+    }
+    #kelsey-story {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-field {
+        margin: 20px;
+    }
+    .form-field input, .form-field textarea {
+        margin: 15px 10px;
+        padding: 10px;
+        border: 1px solid var(--medium-teal);
+        font-size: 24px;
+        border-radius: 10px;
         max-width: 100%;
+    }
+    .form-field label{
+        font-size: 24px;
+        display: block;
     }
     /* Footer */
     footer {
         min-height: 60px;
-        padding: 30px;
+        padding: 30px 20px 10px 20px;
         background-color: var(--footer-background);
         color: var(--footer-color);
     }
     .footer-info {
         display: flex;
-        margin-left: 60px;
+        justify-content: space-around;
     }
-
+    .footer-info h4 {
+        font-family: 'Josefin Sans', sans-serif;
+        color: var(--dark-purple);
+    }
     .footer-info a {
         text-decoration: none;
         color: var(--footer-links);
@@ -135,53 +208,83 @@
         line-height: 2;
         vertical-align: text-top;
     }
+    .branding-card {
+        width: 320px;
+        height: 120px;
+        margin: auto;
+        background-color: #fff;
+        border-radius: 10px;
+    }
     /* Different Screen Size Layouts */
     /* Desktop Specific */
-    @media only screen and (min-width: 577px) {
+    @media only screen and (min-width: 700px) {
+        body {
+            display: grid;
+            grid-template-columns: 2fr 7fr;
+            column-gap: 30px;
+        }
+        header {
+            grid-column: 1/-1;
+        }
+        .jumbotron-message-background {
+            background: linear-gradient(to right, var(--jumbotron-background) 48%, transparent 80%);
+            min-width: 60%;
+        }
         .jumbotron {
             background-image: url("/static/courtroom_cropped.png");
-            background-size: 100% auto;
+            background-position: right;
+            background-size: auto 100%;
             background-repeat: no-repeat;
-            padding: 20px;
+            box-shadow: 0 1px 8px var(--garnet);
+            grid-column: 1/-1
         }
 
         .jumbotron-message {
             max-width: 40%;
-            min-width: 300px;
-            margin: 0 auto 0 40px;
+            padding: 50px;
+        }
+        form {
+            margin-left: 20px;
+        }
+        footer {
+            grid-column: 1/-1;
         }
         .footer-info>li {
             margin-right: 120px;
         }
     }
-    /* Fix Text Overflow*/
-    @media only screen and (max-width: 1000px) {
-        .jumbotron-message {
-            max-width: 100%;
-            width: 100%;
-            margin: 0px;
+    /* Sideway Tablet Shape*/
+    @media only screen and (max-width: 800px) {
+        .jumbotron-message-background {
+            background: linear-gradient(to bottom, var(--jumbotron-background) 10%, transparent 100%);
+            position: relative;
+            height: 100%;
         }
         .jumbotron {
-            background-size: cover;
+            background-image: url("/static/courtroom_phone.png");
+            background-position: left bottom;
+            background-size: 100% auto;
+        }
+        .jumbotron-message {
+            max-width: 100%;
+            backdrop-filter: blur(4px);
         }
     }
     /* Phone Specific */
     @media only screen and (max-width: 576px) {
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        header {
+            flex-direction: column;
+        }
         .header-logo {
             margin: 0px;
             padding: 0px;
             position: relative;
             margin: auto;
-        }
-        .jumbotron {
-            background-image: url("/static/courtroom_phone.png");
-            padding: 30px;
-        }
-        .jumbotron-message {
-            width: 100%;
-        }
-        .cases {
-            flex-direction: column;
         }
         .footer-info {
             flex-direction: column;
@@ -195,55 +298,108 @@
         <div class="header-logo">
             <h1>LEGAL VIDEO</h1>
         </div>
+        <address>
+            <span>Contact Us</span><br>
+            <a href="mailto:maureen@walshlegalvideo.com">maureen@walshlegalvideo.com</a></br>
+            <a href="tel:+18502199016">(850) 219-9016</a>
+        </address>          
     </header>
     <div class="jumbotron">
-        <div class="jumbotron-message">
-            <h2>Why Walsh?</h2>
-            <p>Return On Investment.<br/>Every one of our productions has garnered better settlements for our personal injury and wrongful death clients. We don't simply make videos. We produce broadcast-quality documentaries that are full of power and feeling.</p>
+        <div class="jumbotron-message-background">
+            <div class="jumbotron-message">
+                <h2>Why Walsh?</h2>
+                <h3>Return On Investment.</h3>
+                <p>Every one of our productions has garnered better settlements for our personal injury and wrongful death clients. We don't simply make videos. We produce broadcast-quality documentaries that are full of power and feeling.</p>
+            </div>
         </div>
     </div>
-    <article class="cases">
-        <section>
+    <aside>
+        <h3>Services</h3>
+        <ul>
+            <li>Settlement documentaries</li>
+            <li>Trial Presentation</li>
+            <li>Consultation</li>
+            <li>Scripting</li>
+            <li>Aerial & Drone Video</li>
+        </ul>
+        <h3>Testimonials</h3>
+        <figure class="testimonial">
+            <blockquote>
+                <p>‟We’ve been working Maureen for more than 20 years and she has never let us down once. She is professional, insightful, and compassionate. She brings everyone’s story to life.</p>
+            </blockquote>
+        <figcaption>
+            Beth Sumners<br> Paralegal<br> Guilday Law<br>
+        </figcaption>
+        </figure>
+    </aside>
+    
+    <article>
+        <section id="kelsey-story">
             <h3>Kelsey's Story</h3>
-            <video class="story-video" controls>
-                <source src="/static/Rabbit_browsing.webm" type="video/webm">
-                Sorry, your browser does not support embedded videos
-            </video>
+            <div class="story center">
+                <video class="story-video" poster="/static/thumbnail.jpg" controls>
+                    <source src="/static/kelseys_video.mp4" type="video/mp4" />
+                    Sorry, your browser does not support embedded videos
+                </video>
+                <figure>
+                    <blockquote>
+                        <p>
+                            “I definitely would not have been able to do this without Maureen’s compassion and understanding.”
+                        </p>
+                    </blockquote>
+                    <figcaption>Kelsey Mezzina<br />Client</figcaption>
+                </figure>
+            </div>
         </section>
-        <section>
-            <h3>Mo's Story</h3>
-            <video class="story-video" controls>
-                <source src="/static/Rabbit_browsing.webm" type="video/webm">
-                Sorry, your browser does not support embedded videos
-            </video>
+        <section id="#contact-us">
+            <h3>Contact Us</h3>
+            <h4>(850) 219-9016</h4>
+            <form action="" method="get" class="form-example">
+                <div class="form-field">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name" required>
+                </div>
+                <div class="form-field">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email" required>
+                </div>
+                <div class="form-field">
+                    <label for="message">Message</label>
+                    <textarea cols="55" rows="8" name="message" id="message"></textarea>
+                </div>
+                <div class="form-field">
+                  <input type="submit" value="Send!">
+                </div>
+              </form>
         </section>
     </article>
     <footer>
-        <img width=150 src="static/original_transparent-bg.png" alt="Walsh Litigations Logo" /><br>
         <ul class="footer-info">
             <li>
                 <h4>Contact Us</h4>
-                Maureen Walsh <br />
-                    <address>
+                <address>
+                        Maureen Walsh <br />
+                        Phone: <a href="tel:+18502199016">(850) 219-9016</a><br>
                         Email: <a href="mailto:maureen@walshlegalvideo.com">maureen@walshlegalvideo.com</a><br />
-                        Phone: <a href="tel:+18502126805">(850) 212-6805</a><br />
                         Location: Tallahassee, Florida
                 </address>
             </li>
             <li>
                 <h4>Links</h4>
                 <nav>
-                    <a href="#">Kelsey's Story</a><br/>
-                    <a href="#">Story 2</a>
+                    <a href="#kelsey-story">Kelsey's Story</a><br/>
+                    <a href="#contact-us">Contact Us</a><br>
                 </nav>
             </li>
             <li>
                 <h4>Social Media</h4>
                 <a href="https://www.linkedin.com/in/maureen-walsh-794760a/"><img width=40 src="/static/linkedin.png" alt="Linkedin Badge" /></a>
             </li>
+            <img class="branding-card" src="static/original_transparent-bg.png" alt="Walsh Litigations Logo" />
         </ul>
-        <br />
-        <span class="center">Walsh Litigation Services &#169;</span>
+        <br>
+        <br>
+        <span class="center">Walsh Legal Video 2022 &#169;</span>
     </footer>
 </body>
 </html>
