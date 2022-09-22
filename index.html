@@ -42,6 +42,7 @@
     }
     body {
         min-height: 100%;
+        max-width: 100%;
         font-family: 'Josefin Sans', sans-serif;
     }
     article {
@@ -185,6 +186,12 @@
         font-size: 24px;
         display: block;
     }
+    #about {
+        padding: var(--body-padding);
+    }
+    #about > p {
+        font-weight: 300;
+    }
     /* Footer */
     footer {
         min-height: 60px;
@@ -220,14 +227,14 @@
     @media only screen and (min-width: 700px) {
         body {
             display: grid;
-            grid-template-columns: 2fr 7fr;
+            grid-template-columns: repeat(9, 1fr);
             column-gap: 30px;
         }
         header {
             grid-column: 1/-1;
         }
         .jumbotron-message-background {
-            background: linear-gradient(to right, var(--jumbotron-background) 48%, transparent 80%);
+            background: linear-gradient(to right, var(--jumbotron-background) 50%, transparent 80%);
             min-width: 60%;
         }
         .jumbotron {
@@ -243,8 +250,20 @@
             max-width: 40%;
             padding: 50px;
         }
+        aside {
+            grid-column:1/4;
+        }
+        article {
+            grid-column: 4/-1;
+        }
         form {
             margin-left: 20px;
+        }
+        #about {
+            grid-column: 3/7;
+        }
+        .about {
+            grid-column: 7/8;
         }
         footer {
             grid-column: 1/-1;
@@ -254,7 +273,7 @@
         }
     }
     /* Sideway Tablet Shape*/
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 700px) {
         .jumbotron-message-background {
             background: linear-gradient(to bottom, var(--jumbotron-background) 10%, transparent 100%);
             position: relative;
@@ -373,6 +392,13 @@
               </form>
         </section>
     </article>
+    <div id="about">
+        <h3>About Maureen</h3>
+        <p>
+            Maureen Walsh is an experianced television journalist, including documentary work for public television. She has been telling good stories for more than 30 years and emotionally commit to every project she takes on.
+        </p>
+    </div>
+    <img class="awards" src="/static/awards.png">
     <footer>
         <ul class="footer-info">
             <li>
@@ -389,6 +415,7 @@
                 <nav>
                     <a href="#kelsey-story">Kelsey's Story</a><br/>
                     <a href="#contact-us">Contact Us</a><br>
+                    <a href="#about">About</a>
                 </nav>
             </li>
             <li>
