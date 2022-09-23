@@ -19,9 +19,6 @@
         --medium-teal: #3d7576;
         --light-teal: #baeff0;
         --dark-teal: #174E46;
-        --gold: #fff5c4;
-        --garnet: #261214;
-        --light-garnet: #855a4b;
 
         --body-padding: 15px;
 
@@ -42,47 +39,53 @@
     }
     body {
         min-height: 100%;
-        max-width: 100%;
         font-family: 'Josefin Sans', sans-serif;
-    }
-    article {
-        padding: var(--body-padding);
-    }
-    aside {
-        padding: var(--body-padding);
     }
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Cinzel', serif;
         font-weight: 600;
         color: var(--header-color)
     }
+
     h3 {
         font-size: 1.8em;
     }
+
     blockquote {
         font-family: 'Josefin Sans';
         font-weight: 300;
         font-style: italic;
     }
+    blockquote > p {
+        font-size: 1.6em;
+    }
+
     address {
         display: inline-block;
     }
+    figure {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
     figcaption {
-        text-align: left;
         font-family: 'Cinzel';
+        text-align: left;
+
+        display: block;
         border-left: 2px solid var(--medium-teal);
         padding-left: 4px;
-        float: right;
     }
     ul {
         list-style: none;
         padding: 0px;
         margin: 0px;
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
     p {
         font-family: 'Josefin Sans';
-        font-size: 1.6em;
+        font-size: 1.4em;
     }
     
     .center {
@@ -125,12 +128,13 @@
         color: white;
         text-align: center;
     }
-    .jumbotron-message>h2 {
+    .jumbotron-message h2 {
         font-size: 80px;
         font-weight: 400;
         color: white;
         margin: 0;
         padding: 0;
+        transition: opacity 1s;
     }
     .jumbotron-message > h3 {
         font-family: 'Josefin Sans', sans-serif;
@@ -143,6 +147,9 @@
     }
 
     /* Asides */
+    aside {
+        padding: var(--body-padding);
+    }
     aside li {
         margin-left: 30px;
         line-height: 2.0;
@@ -154,11 +161,25 @@
         padding: 0px;
         margin: 0px;
     }
-    .testimonial figcaption {
-        text-align: left;
-        float: right;
+    .testimonial p {
+        margin: 0;
     }
+    #quote-wheel figure {
+        transition: opacity 1s;
+    }
+    .fade {
+        opacity: 0;
+    }
+    .reveal {
+        opacity: 1;
+    }
+   
     /* Content */
+    article {
+        padding: var(--body-padding);
+    }
+
+    /* Kelsey's Story*/
     .story-video {
         display: inline-block;
         border-radius: 5px;
@@ -171,27 +192,34 @@
         display: flex;
         flex-direction: column;
     }
+    /* Contact Us Form*/
     .form-field {
         margin: 20px;
     }
     .form-field input, .form-field textarea {
-        margin: 15px 10px;
+        margin: 15px 0px;
         padding: 10px;
         border: 1px solid var(--medium-teal);
         font-size: 24px;
         border-radius: 10px;
         max-width: 100%;
     }
+    .form-field input[type=submit] {
+        background-color: rgb(191, 243, 249);
+    }
     .form-field label{
         font-size: 24px;
         display: block;
     }
+
+    /* About Section */
     #about {
         padding: var(--body-padding);
     }
     #about > p {
         font-weight: 300;
     }
+
     /* Footer */
     footer {
         min-height: 60px;
@@ -224,7 +252,7 @@
     }
     /* Different Screen Size Layouts */
     /* Desktop Specific */
-    @media only screen and (min-width: 700px) {
+    @media only screen and (min-width: 576px) {
         body {
             display: grid;
             grid-template-columns: repeat(9, 1fr);
@@ -242,8 +270,8 @@
             background-position: right;
             background-size: auto 100%;
             background-repeat: no-repeat;
-            box-shadow: 0 1px 8px var(--garnet);
-            grid-column: 1/-1
+            box-shadow: 0 0 3px var(--jumbotron-background);
+            grid-column: 1/-1;
         }
 
         .jumbotron-message {
@@ -251,19 +279,21 @@
             padding: 50px;
         }
         aside {
-            grid-column:1/4;
+            grid-column:1/3;
         }
         article {
-            grid-column: 4/-1;
+            grid-column: 3/-1;
         }
         form {
             margin-left: 20px;
         }
         #about {
-            grid-column: 3/7;
+            grid-column: 2/5;
         }
-        .about {
-            grid-column: 7/8;
+        .awards {
+            grid-column: 5/9;
+            max-width: 100%;
+            margin: auto;
         }
         footer {
             grid-column: 1/-1;
@@ -273,7 +303,13 @@
         }
     }
     /* Sideway Tablet Shape*/
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 900px) {
+        aside {
+            grid-column:1/4;
+        }
+        article {
+            grid-column: 4/-1;
+        }
         .jumbotron-message-background {
             background: linear-gradient(to bottom, var(--jumbotron-background) 10%, transparent 100%);
             position: relative;
@@ -288,14 +324,14 @@
             max-width: 100%;
             backdrop-filter: blur(4px);
         }
+        .footer-info {
+            flex-direction: column;
+            margin: 0;
+        }   
     }
     /* Phone Specific */
     @media only screen and (max-width: 576px) {
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-        }
+        
         header {
             flex-direction: column;
         }
@@ -305,13 +341,11 @@
             position: relative;
             margin: auto;
         }
-        .footer-info {
-            flex-direction: column;
-            margin: 0;
-        }
     }
 
 </style>
+
+
 <body>
     <header>
         <div class="header-logo">
@@ -326,7 +360,7 @@
     <div class="jumbotron">
         <div class="jumbotron-message-background">
             <div class="jumbotron-message">
-                <h2>Why Walsh?</h2>
+                <div id="jumbotron-fader"><h2>Why Walsh?</h2></div>
                 <h3>Return On Investment.</h3>
                 <p>Every one of our productions has garnered better settlements for our personal injury and wrongful death clients. We don't simply make videos. We produce broadcast-quality documentaries that are full of power and feeling.</p>
             </div>
@@ -342,6 +376,7 @@
             <li>Aerial & Drone Video</li>
         </ul>
         <h3>Testimonials</h3>
+        <div id="quote-wheel">
         <figure class="testimonial">
             <blockquote>
                 <p>‟We’ve been working Maureen for more than 20 years and she has never let us down once. She is professional, insightful, and compassionate. She brings everyone’s story to life.</p>
@@ -350,6 +385,7 @@
             Beth Sumners<br> Paralegal<br> Guilday Law<br>
         </figcaption>
         </figure>
+        </div>
     </aside>
     
     <article>
@@ -360,17 +396,18 @@
                     <source src="/static/kelseys_video.mp4" type="video/mp4" />
                     Sorry, your browser does not support embedded videos
                 </video>
-                <figure>
-                    <blockquote>
-                        <p>
-                            “I definitely would not have been able to do this without Maureen’s compassion and understanding.”
-                        </p>
-                    </blockquote>
-                    <figcaption>Kelsey Mezzina<br />Client</figcaption>
-                </figure>
+           
+                    <figure>
+                        <blockquote>
+                            <p>
+                                “I definitely would not have been able to do this without Maureen’s compassion and understanding.”
+                            </p>
+                        </blockquote>
+                        <figcaption>Kelsey Mezzina<br />Client</figcaption>
+                    </figure>
             </div>
         </section>
-        <section id="#contact-us">
+        <section id="contact-us">
             <h3>Contact Us</h3>
             <h4>(850) 219-9016</h4>
             <form action="" method="get" class="form-example">
@@ -384,7 +421,7 @@
                 </div>
                 <div class="form-field">
                     <label for="message">Message</label>
-                    <textarea cols="55" rows="8" name="message" id="message"></textarea>
+                    <textarea cols="40" rows="8" name="message" id="message"></textarea>
                 </div>
                 <div class="form-field">
                   <input type="submit" value="Send!">
@@ -395,10 +432,10 @@
     <div id="about">
         <h3>About Maureen</h3>
         <p>
-            Maureen Walsh is an experianced television journalist, including documentary work for public television. She has been telling good stories for more than 30 years and emotionally commit to every project she takes on.
+            Maureen Walsh is an experienced television journalist, including documentary work for public television. She has been telling good stories for more than 30 years and emotionally commit to every project she takes on.
         </p>
     </div>
-    <img class="awards" src="/static/awards.png">
+    <img class="awards" alt="Maureen with trophies" src="/static/awards.png">
     <footer>
         <ul class="footer-info">
             <li>
@@ -428,5 +465,43 @@
         <br>
         <span class="center">Walsh Legal Video 2022 &#169;</span>
     </footer>
+    <script>
+        let quotesElement = document.getElementById('quote-wheel');
+        const quotes = [{quote: "The next quote", author: "K Lawyer", position: "Lawyer", association: "Client"}, {quote: "Quote 2", author: "a", association: "b"}];
+        const newQuotesElement = (textObj) => {
+            let {quote, author,  position, association} = textObj;
+            return `<figure class="fade">
+                            <blockquote>
+                                <p>
+                                    “${quote}”
+                                </p>
+                            </blockquote>
+                            <figcaption>${author}<br />
+                                ${position ? position + "<br>" : ""}
+                                ${association ? association + "<br>" : ""}
+                                </figcaption>
+                        </figure>`
+        };
+        let Fader = function(targetElement, textList, updateElement) {
+            let index = 1;
+            this.textList = textList;
+            this.updateElement = updateElement;
+            this.targetElement = targetElement;
+            this.updateQuote = function() {
+                index = (index + 1) % this.textList.length;
+                targetElement.innerHTML = this.updateElement(this.textList[index]);
+                setTimeout(() => this.targetElement.childNodes[0].classList.add('reveal'), 100);
+            }
+        }
+
+        let quoteWheel = new Fader(quotesElement, quotes, newQuotesElement);
+    
+        let jumbotronMessage = document.getElementById("jumbotron-fader");
+        let text = ["<h2 class='fade'>Why Video?</h2>", "<h2 class='fade'>Why Walsh?</h2>"]
+        let updateText = (text) => text;
+        let jumboFader = new Fader(jumbotronMessage, text, updateText);
+        setInterval(() => quoteWheel.updateQuote(), 6000);
+        setInterval(() => jumboFader.updateQuote(), 6000);
+    </script>
 </body>
 </html>
