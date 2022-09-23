@@ -68,6 +68,7 @@
         flex-direction: column;
         align-items: flex-end;
         justify-content: flex-start;
+        margin: 0px;
     }
     figcaption {
         font-family: 'Cinzel';
@@ -87,12 +88,19 @@
         font-family: 'Josefin Sans';
         font-size: 1.4em;
     }
-    
+    /* Utility Classes */
     .center {
         display: block;
         margin: auto;
         text-align: center;
     }
+    .fade {
+        opacity: 0;
+    }
+    .reveal {
+        opacity: 1;
+    }
+   
     /* Header */
     header {
         display: flex;
@@ -107,21 +115,11 @@
     .header-logo {
         height: 130px;
         width: 320px;
-        background-image: url("/static/logo_transparent-bg.png");
-        background-position: top left;
+        background-image: url("/static/walsh_logo.png");
+        background-position: center;
         background-repeat: no-repeat;
+        background-size: contain;
         margin: 0;
-    }
-    .header-logo > h1 {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 20px;
-        display: inline-block;
-        position: relative;
-        top: 78px;
-        left: 124px;
-        margin: 0;
-        padding: 0;
-        color: var(--header-color);
     }
     /* Jumbotron */
     .jumbotron-message {
@@ -134,7 +132,7 @@
         color: white;
         margin: 0;
         padding: 0;
-        transition: opacity 1s;
+        transition: opacity 3s ease;
     }
     .jumbotron-message > h3 {
         font-family: 'Josefin Sans', sans-serif;
@@ -165,15 +163,8 @@
         margin: 0;
     }
     #quote-wheel figure {
-        transition: opacity 1s;
+        transition: opacity 1s ease-in;
     }
-    .fade {
-        opacity: 0;
-    }
-    .reveal {
-        opacity: 1;
-    }
-   
     /* Content */
     article {
         padding: var(--body-padding);
@@ -349,7 +340,6 @@
 <body>
     <header>
         <div class="header-logo">
-            <h1>LEGAL VIDEO</h1>
         </div>
         <address>
             <span>Contact Us</span><br>
@@ -393,7 +383,7 @@
             <h3>Kelsey's Story</h3>
             <div class="story center">
                 <video class="story-video" poster="/static/thumbnail.jpg" controls>
-                    <source src="/static/kelseys_video.mp4" type="video/mp4" />
+                    <source src="https://walshlegalvideo.s3.us-east-2.amazonaws.com/static/kelseys_video.mp4" type="video/mp4" />
                     Sorry, your browser does not support embedded videos
                 </video>
            
@@ -435,7 +425,7 @@
             Maureen Walsh is an experienced television journalist, including documentary work for public television. She has been telling good stories for more than 30 years and emotionally commit to every project she takes on.
         </p>
     </div>
-    <img class="awards" alt="Maureen with trophies" src="/static/awards.png">
+    <img class="awards" alt="Maureen with trophies" src="https://walshlegalvideo.s3.us-east-2.amazonaws.com/static/awards.png">
     <footer>
         <ul class="footer-info">
             <li>
@@ -457,9 +447,9 @@
             </li>
             <li>
                 <h4>Social Media</h4>
-                <a href="https://www.linkedin.com/in/maureen-walsh-794760a/"><img width=40 src="/static/linkedin.png" alt="Linkedin Badge" /></a>
+                <a href="https://www.linkedin.com/in/maureen-walsh-794760a/"><img width=40 src="https://walshlegalvideo.s3.us-east-2.amazonaws.com/static/linkedin.png" alt="Linkedin Badge" /></a>
             </li>
-            <img class="branding-card" src="static/original_transparent-bg.png" alt="Walsh Litigations Logo" />
+            <img class="branding-card" src="https://walshlegalvideo.s3.us-east-2.amazonaws.com/static/walsh_logo.png" alt="Walsh Litigations Logo" />
         </ul>
         <br>
         <br>
@@ -467,7 +457,12 @@
     </footer>
     <script>
         let quotesElement = document.getElementById('quote-wheel');
-        const quotes = [{quote: "The next quote", author: "K Lawyer", position: "Lawyer", association: "Client"}, {quote: "Quote 2", author: "a", association: "b"}];
+        const quotes = [
+            {quote: "We’ve been working Maureen for more than 20 years and she has never let us down once. She is professional, insightful, and compassionate. She brings everyone’s story to life.", author: "Beth Sumners", position: "Paralegal", association: "Guilday Law"},
+            {quote: "This script is truly beautiful. I don’t have a single change. I LOVE it. You have FAR EXCEEDED MY EXPECTATIONS, yet again. You’re an incredible story teller. THANK YOU", author: "Carry Roane", position: "Lawyer",association: "Fasig Brooks"},
+            {quote: "I have been in the court reporting industry for over 40 years and Maureen’s “In the Life of” trial video was the best I have ever seen.", author: "Barbara Memory", position: "RPR, CPR", association: "Memory Reporting, Inc."},
+            {quote: "You’re seriously gifted. You made him and actual person rather than a claim number. It’s cinematic genius and is going to move every single person who watches it.", author: "Britney Waldo", position: "Paralegal", association: "Fasig Brooks"},
+            {quote: "An acident doesn’t just affect you; it affects your entire family too. Maureen worked with me and my entire family to share my story through my eyes and theirs. From the first phone call to my mom to the care I needed afterwards, the settlement video captured it all.", author: "Kelsey Mezzina", position: "Client", association: ""}];
         const newQuotesElement = (textObj) => {
             let {quote, author,  position, association} = textObj;
             return `<figure class="fade">
@@ -500,8 +495,8 @@
         let text = ["<h2 class='fade'>Why Video?</h2>", "<h2 class='fade'>Why Walsh?</h2>"]
         let updateText = (text) => text;
         let jumboFader = new Fader(jumbotronMessage, text, updateText);
-        setInterval(() => quoteWheel.updateQuote(), 6000);
-        setInterval(() => jumboFader.updateQuote(), 6000);
+        setInterval(() => quoteWheel.updateQuote(), 10000);
+        setInterval(() => jumboFader.updateQuote(), 9000);
     </script>
 </body>
 </html>
