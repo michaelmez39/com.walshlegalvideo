@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Josefin+Sans:ital,wght@0,200;0,400;1,200;1,300&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="shortcut icon" href="/favicon3.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/layout.css">
+    <title>Walsh Legal Videography</title>
+</head>
+
+<body id="app">
+
+    <div class="jumbotron">
+        <div class="jumbotron-message-background">
+            <div class="jumbotron-message" id="jumbotron-fader">
+                <h2>Why Walsh?</h2>
+                <h3>Return On Investment.</h3>
+                <p>A Walsh production makes a difference.  Every one of our documentaries has garnered better settlements for our wrongful death and personal injury clients.  Whether it is a Day In The Life or a settlement documentary, we don't simply make videos.  We create broadcast quality productions that are full of feeling.  Our videos take you out of the mediation room and put you into the lives of your clients:  their homes, their families and their struggles.  The result is powerful.</p>
+            </div>
+        </div>
+    </div>
+    <aside>
+        <h3>Services</h3>
+        <ul>
+            <li>Day in the Life</li>
+            <li>Settlement documentaries</li>
+            <li>Trial Graphics</li>
+            <li>Consultation</li>
+            <li>Scripting</li>
+            <li>Aerial & Drone Video</li>
+        </ul>
+        <h3>Testimonials</h3>
+        <div id="quote-wheel">
+        <figure class="testimonial">
+            <blockquote>
+                <p>‟We’ve been working Maureen for more than 20 years and she has never let us down once. She is professional, insightful, and compassionate. She brings everyone’s story to life.</p>
+            </blockquote>
+        <figcaption>
+            Beth Sumners<br> Paralegal<br> Guilday Law<br>
+        </figcaption>
+        </figure>
+        </div>
+    </aside>
+    
+    <article>
+        <section id="kelsey-story">
+            <h3>Kelsey's Story</h3>
+            <div class="story center">
+                <video class="story-video" poster="/static/thumbnail.jpg" controls>
+                    <source src="/static/kelseys_video.mp4" type="video/mp4" />
+                    Sorry, your browser does not support embedded videos
+                </video>
+           
+                    <figure>
+                        <blockquote>
+                            <p>
+                                “I definitely would not have been able to do this without Maureen’s compassion and understanding.”
+                            </p>
+                        </blockquote>
+                        <figcaption>Kelsey Mezzina<br />Client</figcaption>
+                    </figure>
+            </div>
+        </section>
+        <section id="contact-us">
+            <h3>Contact Us</h3>
+            <h4>(850) 219-9016</h4>
+            <form action="" method="get" class="form-example">
+                <div class="form-field">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name" required>
+                </div>
+                <div class="form-field">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email" required>
+                </div>
+                <div class="form-field">
+                    <label for="message">Message</label>
+                    <textarea cols="40" rows="8" name="message" id="message"></textarea>
+                </div>
+                <div class="form-field">
+                  <input type="submit" value="Send!">
+                </div>
+              </form>
+        </section>
+    </article>
+    <div id="about">
+        <h3>About Maureen</h3>
+        <p>
+            Maureen Walsh is an experienced television journalist, including documentary work for public television. She has been telling good stories for more than 30 years and emotionally commit to every project she takes on.
+        </p>
+    </div>
+    <img class="awards" alt="Maureen with trophies" src="/static/awards.png">
+    <footer>
+        <ul class="footer-info">
+            <li>
+                <h4>Contact Us</h4>
+                <address>
+                        Maureen Walsh <br />
+                        Phone: <a href="tel:+18502199016">(850) 219-9016</a><br>
+                        Email: <a href="mailto:maureen@walshlegalvideo.com">maureen@walshlegalvideo.com</a><br />
+                        Location: Tallahassee, Florida
+                </address>
+            </li>
+            <li>
+                <h4>Links</h4>
+                <nav>
+                    <a href="#kelsey-story">Kelsey's Story</a><br/>
+                    <a href="#contact-us">Contact Us</a><br>
+                    <a href="#about">About</a>
+                </nav>
+            </li>
+            <li>
+                <h4>Social Media</h4>
+                <a href="https://www.linkedin.com/in/maureen-walsh-794760a/"><img width=40 src="https://walshlegalvideo.s3.us-east-2.amazonaws.com/static/linkedin.png" alt="Linkedin Badge" /></a>
+            </li>
+            <img class="branding-card" src="/static/walsh_logo.png" alt="Walsh Litigations Logo" />
+        </ul>
+        <br>
+        <br>
+        <span class="center">Walsh Legal Video 2022 &#169;</span>
+    </footer>
+    
+    <!-- <script>
+        let quotesElement = document.getElementById('quote-wheel');
+        const quotes = [
+            {quote: "We’ve been working Maureen for more than 20 years and she has never let us down once. She is professional, insightful, and compassionate. She brings everyone’s story to life.", author: "Beth Sumners", position: "Paralegal", association: "Guilday Law"},
+            {quote: "This script is truly beautiful. I don’t have a single change. I LOVE it. You have FAR EXCEEDED MY EXPECTATIONS, yet again. You’re an incredible story teller. THANK YOU", author: "Carrie Roane", position: "Attorney",association: "Fasig Brooks"},
+            {quote: "I have been in the court reporting industry for over 40 years and Maureen’s “In the Life of” trial video was the best I have ever seen.", author: "Barbara Memory", position: "RPR, CPR", association: "Memory Reporting, Inc."},
+            {quote: "You’re seriously gifted. You made him and actual person rather than a claim number. It’s cinematic genius and is going to move every single person who watches it.", author: "Britney Waldo", position: "Paralegal", association: "Fasig Brooks"},
+            {quote: "An accident doesn’t just affect you; it affects your entire family too. Maureen worked with me and my entire family to share my story through my eyes and theirs. From the first phone call to my mom to the care I needed afterwards, the settlement video captured it all.", author: "Kelsey Mezzina", position: "Client", association: ""}
+        ];
+        const newQuotesElement = (textObj) => {
+            let {quote, author,  position, association} = textObj;
+            return `<figure class="fade">
+                            <blockquote>
+                                <p>
+                                    “${quote}”
+                                </p>
+                            </blockquote>
+                            <figcaption>${author}<br />
+                                ${position ? position + "<br>" : ""}
+                                ${association ? association + "<br>" : ""}
+                                </figcaption>
+                        </figure>`
+        };
+        let Fader = function(targetElement, textList, updateElement) {
+            let index = 1;
+            this.textList = textList;
+            this.updateElement = updateElement;
+            this.targetElement = targetElement;
+            this.updateQuote = function() {
+                index = (index + 1) % this.textList.length;
+                targetElement.innerHTML = this.updateElement(this.textList[index]);
+                setTimeout(() => this.targetElement.childNodes[0].classList.add('reveal'), 100);
+            }
+        }
+
+        let quoteWheel = new Fader(quotesElement, quotes, newQuotesElement);
+    
+        let jumbotronMessage = document.getElementById("jumbotron-fader");
+        const why_walsh =  "<h2 class='fade'>Why Walsh?</h2><h3>Return On Investment.</h3><p>A Walsh production makes a difference.  Every one of our documentaries has garnered better settlements for our wrongful death and personal injury clients.  Whether it is a Day In The Life or a settlement documentary, we don't simply make videos.  We create broadcast quality productions that are full of feeling.  Our videos take you out of the mediation room and put you into the lives of your clients:  their homes, their families and their struggles.  The result is powerful.</p>";
+        const why_video = "<h2 class='fade'>Why Video?</h2><p>Because you cannot write a brief that is as powerful as a good video.  The camera is an unblinking witness to your client's world-- the trauma, the tears and the triumph.  You don't need cheap tricks like dramatic music to manipulate viewers.  Just listen to your clients.  Look into their eyes. Let them tell their story with all of the intimacy and power of their real life.  That is the human element of your case and you cannot replace it with words on a page or in a courtroom.</p>"
+        let text = [why_video, why_walsh];
+        let updateText = (text) => text;
+        let jumboFader = new Fader(jumbotronMessage, text, updateText);
+        setInterval(() => quoteWheel.updateQuote(), 15000);
+        setInterval(() => jumboFader.updateQuote(), 9000);
+    </script> -->
+
+</body>
+
+</html>

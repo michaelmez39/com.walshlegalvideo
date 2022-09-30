@@ -1,0 +1,95 @@
+  /* Set colors for different parts of the site*/
+  :root {
+    --purple: #5e2e69;
+    --dark-purple: #341a3a;
+    --medium-teal: #3d7576;
+    --light-teal: #baeff0;
+    --dark-teal: #174E46;
+
+    --body-padding: 15px;
+
+    --jumbotron-background: var(--purple);
+    --header-color: var(--dark-teal);
+    --footer-background: var(--light-teal);
+    --footer-color: var(--purple);
+    --footer-links: var(--medium-teal);
+}
+
+/* Stop any weird browser shenanigans */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+/* Element Styling */
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: var(--header-color)
+}
+
+h3 {
+    font-size: 2.5em;
+}
+
+h4 {
+    font-size: 2.0em;
+}
+
+blockquote {
+    font-family: 'Josefin Sans';
+    font-weight: 300;
+    font-style: italic;
+}
+blockquote > p {
+    font-size: 1.6em;
+}
+
+address {
+    display: inline-block;
+}
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin: 0px;
+}
+figcaption {
+    font-family: 'Cinzel';
+    text-align: left;
+
+    display: block;
+    border-left: 2px solid var(--medium-teal);
+    padding-left: 4px;
+}
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.4em;
+}
+p {
+    font-family: 'Josefin Sans';
+    font-size: 1.4em;
+}
+/* Utility Classes */
+
+.center {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+.fade {
+    opacity: 0;
+}
+.reveal {
+    opacity: 1;
+}
+

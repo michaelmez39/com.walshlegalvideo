@@ -1,0 +1,74 @@
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header > address {
+  font-family: 'Cinzel';
+  font-size: 1.6em;
+  text-align: center;
+  padding: 30px;
+}
+header a {
+  text-decoration: none;
+  color: var(--dark-teal);
+}
+header span {
+  font-size: 1.7em;
+  font-weight: 600;
+}
+.header-logo {
+  height: 130px;
+  width: 320px;
+  background-image: url("./assets/walsh_logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0;
+}
+
+/* Aside */
+aside {
+  padding: var(--body-padding);
+}
+aside li {
+  margin-left: 30px;
+  line-height: 2.0;
+}
+aside li::before {
+  content: "➣ ";
+}
+.testimonial {
+  padding: 0px;
+  margin: 0px;
+}
+.testimonial p {
+  margin: 0;
+}
+
+
+article {
+  padding: var(--body-padding);
+}
+
+/* Kelsey's Story*/
+.story-video {
+  display: inline-block;
+  border-radius: 5px;
+  width: 100%;
+}
+.story {
+  max-width: 800px;
+}
+#kelsey-story {
+  display: flex;
+  flex-direction: column;
+}
+/* About Section */
+#about {
+  padding: var(--body-padding);
+}
+#about > p {
+  font-weight: 300;
+}

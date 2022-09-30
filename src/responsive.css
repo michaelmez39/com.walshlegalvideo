@@ -1,0 +1,109 @@
+@media only screen and (min-width: 576px) {
+    #app {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 40px;
+        grid-template-rows: auto 640px;
+    }
+    header {
+        grid-column: 1/-1;
+    }
+    .jumbotron-message-background {
+        background: linear-gradient(to right, var(--jumbotron-background) 50%, transparent 80%);
+        min-width: 60%;
+    }
+    .jumbotron {
+        background-image: url("./assets/courtroom_cropped.png");
+        background-position: right;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        box-shadow: 0 0 3px var(--jumbotron-background);
+        grid-column: 1/-1;
+    }
+
+    .jumbotron-message {
+        max-width: 40%;
+        padding: 50px;
+    }
+    aside {
+        grid-column:2/6;
+    }
+    article {
+        grid-column: 6/-2;
+    }
+    form {
+        margin-left: 20px;
+    }
+    #about {
+        grid-column: 2/7;
+    }
+    .awards {
+        grid-column: 7/12;
+        max-width: 100%;
+        margin: auto;
+    }
+    footer {
+        grid-column: 1/-1;
+    }
+    .footer-info>li {
+        margin-right: 120px;
+    }
+}
+@media only screen and (min-width: 2200px) {
+    .jumbotron {
+        background-size: cover;
+    }
+}
+/* Sideway Tablet Shape*/
+@media only screen and (max-width: 900px) {
+    .jumbotron-message-background {
+        background: linear-gradient(to bottom, var(--jumbotron-background) 10%, transparent 100%);
+        position: relative;
+        height: 100%;
+    }
+    .jumbotron {
+        background-image: url("./assets/courtroom_phone.png");
+        background-position: left bottom;
+        background-size: 100% auto;
+    }
+    .jumbotron-message {
+        max-width: 100%;
+        backdrop-filter: blur(4px);
+    }
+    aside {
+        grid-column:1/6;
+    }
+    article {
+        grid-column: 6/-1;
+    }
+    #about {
+        grid-column: 1/7;
+    }
+    .awards {
+        grid-column: 7/-1;
+        max-width: 100%;
+        margin: auto;
+    }
+
+    .footer-info {
+        flex-direction: column;
+        margin: 0;
+    }
+    .awards {
+        max-width: 100%;
+        margin: auto;
+    }
+}
+/* Phone Specific */
+@media only screen and (max-width: 576px) {
+    
+    header {
+        flex-direction: column;
+    }
+    .header-logo {
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+        margin: auto;
+    }
+}
