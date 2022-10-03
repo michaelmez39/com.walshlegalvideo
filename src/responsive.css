@@ -2,7 +2,7 @@
     #app {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        column-gap: 40px;
+        column-gap: 50px;
         grid-template-rows: auto 640px;
     }
     header {
@@ -25,17 +25,30 @@
         max-width: 40%;
         padding: 50px;
     }
-    aside {
-        grid-column:2/6;
+    .call-line {
+        grid-column: 1/-1;
+        
     }
-    article {
-        grid-column: 6/-2;
+    .photo-gallery {
+        grid-column: 2/-2;
     }
-    form {
-        margin-left: 20px;
+    .testimonials {
+        grid-column: 2/7;
+        align-self: flex-end;
+        width: 100%;
+    }
+    #kelsey-story {
+        width: 100%;
+        grid-column: 7/12;
+    }
+    .services {
+        grid-column: 2/7;
+    }
+    #contact-us {
+        grid-column: 7/12;
     }
     #about {
-        grid-column: 2/7;
+        grid-column: 3/7;
     }
     .awards {
         grid-column: 7/12;

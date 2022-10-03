@@ -23,24 +23,27 @@
     form {
         background-color: var(--purple);
         padding: 30px;
-        border-radius: 15px;
+        border-radius: 2px;
         color: white;
     }
 </style>
-<form action="" method="get" class="form-example">
-    <div class="form-field">
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name" required>
-    </div>
-    <div class="form-field">
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required>
-    </div>
-    <div class="form-field">
-        <label for="message">Message</label>
-        <textarea cols="40" rows="8" name="message" id="message"></textarea>
-    </div>
-    <div class="form-field">
-      <input type="submit" value="Send!">
-    </div>
-  </form>
+<div id="contact-us">
+    <h3>Contact Us</h3>
+    <form action="" method="get" class="form-example">
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required>
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required>
+        </div>
+        <div class="form-field">
+            <label for="message">Message</label>
+            <textarea cols="40" rows="8" name="message" id="message"></textarea>
+        </div>
+        <div class="form-field">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+</div>

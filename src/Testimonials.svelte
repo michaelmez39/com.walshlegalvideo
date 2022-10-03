@@ -13,7 +13,7 @@
         display: flex;
         justify-content: space-around;
         width: 50%;
-        margin: 0 auto 15px auto;
+        margin: 20px auto;
     }
     figure {
         position: absolute;
@@ -24,6 +24,10 @@
         height: 400px;
         overflow: hidden;
         width: 100%;
+    }
+    blockquote {
+        margin: auto 40px auto 40px;
+        line-height: 2.5em;
     }
 </style>
 <script>
@@ -51,28 +55,29 @@
         console.log("switch quote");
     }, quote_interval)
 </script>
-
-<div class="quote-picker">
-    {#each quotes as q, idx}
-        {#if idx == index}
-            <div  class="circle active"></div>
-        {:else}
-            <div class="circle" on:click={() => switchTo(idx)}></div>
-        {/if}
-    {/each}
-</div>
-<!-- out:fade="{{delay: 0, duration: 300}}" in:fade="{{delay: 320, duration: 300}}" -->
-<div class="anchor">
-    {#key quote}
-    <figure in:fade="{{duration: 300, delay:400}}" out:fly="{{delay: 0, duration: 400, x: 100, y: 0, opacity: 0.1, easing: backOut}}" class="testimonial">
-        <blockquote>
-            <p>{statement}</p>
-        </blockquote>
-        <figcaption>
-            {author}<br>{position}<br>{association}
-        </figcaption>
-    </figure>
-    {/key}
+<div class="testimonials">
+    <div class="quote-picker">
+        {#each quotes as q, idx}
+            {#if idx == index}
+                <div  class="circle active"></div>
+            {:else}
+                <div class="circle" on:click={() => switchTo(idx)}></div>
+            {/if}
+        {/each}
+    </div>
+    <!-- out:fade="{{delay: 0, duration: 300}}" in:fade="{{delay: 320, duration: 300}}" -->
+    <div class="anchor">
+        {#key quote}
+        <figure in:fade="{{duration: 300, delay:400}}" out:fly="{{delay: 0, duration: 400, x: 100, y: 0, opacity: 0.1, easing: backOut}}" class="testimonial">
+            <blockquote>
+                <p>{statement}</p>
+            </blockquote>
+            <figcaption>
+                {author}<br>{position}<br>{association}
+            </figcaption>
+        </figure>
+        {/key}
+    </div>    
 </div>
 
 

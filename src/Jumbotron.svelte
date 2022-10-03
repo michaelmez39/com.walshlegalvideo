@@ -19,6 +19,7 @@
         font-family: 'Josefin Sans', sans-serif;
         color: white;
         font-size: 42px;
+        margin: 0 auto 10px auto;
     }
     .jumbotron-message>p {
         line-height: 36px;

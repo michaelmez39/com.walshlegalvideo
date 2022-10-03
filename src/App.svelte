@@ -1,67 +1,33 @@
 <script lang="ts">
   import awards from './assets/awards.png';
-  import thumbnail from './assets/thumbnail.jpg';
 
 
   import Jumbotron from './Jumbotron.svelte';
+  import CallLine from './CallLine.svelte';
   import Footer from './Footer.svelte';
   import Testimonials from './Testimonials.svelte';
+  import Services from './Services.svelte';
   import Contact from './Contact.svelte';
-  import SecondStory from './SecondStory.svelte';
+  import ImageGallery from './ImageGallery.svelte';
+  import KelseyStory from './KelseyStory.svelte';
+
 </script>
 
 <header>
   <div class="header-logo">
-  </div>
-  <address>
-      <span>Call</span><br>
-      <a href="tel:+18502199016">(850)219-9016</a>
-  </address>          
+  </div>       
 </header>
 
 <Jumbotron />
+<CallLine />
+<ImageGallery />
 
-<aside>
-  <h3>Services</h3>
-  <ul>
-      <li>Day in the Life</li>
-      <li>Settlement documentaries</li>
-      <li>Trial Graphics</li>
-      <li>Consultation</li>
-      <li>Scripting</li>
-      <li>Aerial & Drone Video</li>
-  </ul>
-  <h3>Testimonials</h3>
-  <Testimonials />
+<Testimonials />
+<KelseyStory />
+<Services />
+<Contact />
 
-  <h4 id="contact-us">Contact Us</h4>
-  <h5>(850) 219-9016</h5>
-  <Contact />
-</aside>
 
-<article>
-  <section id="kelsey-story">
-      <h4>Kelsey's Story</h4>
-      <div class="story center">
-          <video class="story-video" poster={thumbnail} controls>
-              <source src="/kelsey_video.mp4" type="video/mp4" />
-              Sorry, your browser does not support embedded videos
-          </video>
-     
-              <figure>
-                  <blockquote>
-                      <p>
-                          “I definitely would not have been able to do this without Maureen’s compassion and understanding.”
-                      </p>
-                  </blockquote>
-                  <figcaption>Kelsey Mezzina<br />Client</figcaption>
-              </figure>
-      </div>
-  </section>
-  <section>
-      <SecondStory />
-  </section>
-</article>
 
 <div id="about">
   <h3>About Maureen</h3>
