@@ -2,7 +2,7 @@
     #app {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        column-gap: 50px;
+        column-gap: 5q0px;
         grid-template-rows: auto 640px;
     }
     header {

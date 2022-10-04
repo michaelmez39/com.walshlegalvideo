@@ -24,10 +24,6 @@
         text-decoration: none;
         color: var(--footer-links);
     }
-    ul nav {
-        line-height: 2;
-        vertical-align: text-top;
-    }
     .branding-card {
         width: 320px;
         height: 120px;
@@ -51,14 +47,6 @@
                     Email: <a href="mailto:maureen@walshlegalvideo.com">maureen@walshlegalvideo.com</a><br />
                     Location: Tallahassee, Florida
             </address>
-        </li>
-        <li>
-            <h4>Links</h4>
-            <nav>
-                <a href="#kelsey-story">Kelsey's Story</a><br/>
-                <a href="#contact-us">Contact Us</a><br>
-                <a href="#about">About</a>
-            </nav>
         </li>
         <li>
             <h4>Social Media</h4>
