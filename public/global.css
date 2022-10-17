@@ -83,7 +83,9 @@ p {
     font-size: 1.4em;
 }
 /* Utility Classes */
-
+.full {
+    grid-column: 1/-1;
+}
 .center {
     display: block;
     margin: auto;

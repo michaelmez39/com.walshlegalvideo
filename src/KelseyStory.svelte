@@ -1,6 +1,11 @@
 <script>
   import thumbnail from './assets/thumbnail.jpg';
 </script>
+<style>
+    iframe {
+        max-width: 100%
+    }
+</style>
 <div id="kelsey-story">
     <h4>Kelsey's Story</h4>
     <div class="story center">

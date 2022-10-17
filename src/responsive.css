@@ -2,7 +2,7 @@
     #app {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        column-gap: 5q0px;
+        column-gap: 50px;
         grid-template-rows: auto 640px;
     }
     header {
@@ -34,7 +34,7 @@
     }
     .testimonials {
         grid-column: 2/7;
-        align-self: flex-end;
+        align-self: center;
         width: 100%;
     }
     #kelsey-story {
@@ -53,6 +53,7 @@
     .awards {
         grid-column: 7/12;
         max-width: 100%;
+        padding: 10px;
         margin: auto;
     }
     footer {

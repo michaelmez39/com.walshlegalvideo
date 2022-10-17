@@ -2,10 +2,11 @@
     .photo-gallery {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
     .photo-gallery > img {
         width: 310px;
+        max-width: 25%;
         height: auto;
     }
 </style>

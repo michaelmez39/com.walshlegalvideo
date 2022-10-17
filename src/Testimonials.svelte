@@ -16,12 +16,13 @@
         margin: 20px auto;
     }
     figure {
-        position: absolute;
+        /* position: absolute; */
+        margin: 0 auto;
         width: 100%;
     }
     .anchor {
         position: relative;
-        height: 400px;
+        height: 300px;
         overflow: hidden;
         width: 100%;
     }
@@ -33,9 +34,9 @@
 <script>
     import { fly, fade } from 'svelte/transition';
 	import { backOut } from 'svelte/easing';    
-    const quote_interval = 12000;
+    const quote_interval = 16_000;
     const quotes = [
-            {statement: "We’ve been working Maureen for more than 20 years and she has never let us down once. She is professional, insightful, and compassionate. She brings everyone’s story to life.", author: "Beth Sumners", position: "Paralegal", association: "Guilday Law"},
+            {statement: "We’ve worked with Maureen for more than 20 years and she has never let us down once. She is professional, insightful, and compassionate. She brings everyone’s story to life.", author: "Beth Sumners", position: "Paralegal", association: "Guilday Law"},
             {statement: "This script is truly beautiful. I don’t have a single change. I LOVE it. You have FAR EXCEEDED MY EXPECTATIONS, yet again. You’re an incredible story teller. THANK YOU", author: "Carrie Roane", position: "Attorney",association: "Fasig Brooks"},
             {statement: "I have been in the court reporting industry for over 40 years and Maureen’s “In the Life of” trial video was the best I have ever seen.", author: "Barbara Memory", position: "RPR, CPR", association: "Memory Reporting, Inc."},
             {statement: "You’re seriously gifted. You made him an actual person rather than a claim number. It’s cinematic genius and is going to move every single person who watches it.", author: "Britney Waldo", position: "Paralegal", association: "Fasig Brooks"},
